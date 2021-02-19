@@ -7,6 +7,8 @@
         type="email" class="form-control" 
         placeholder="Email" name="email" 
         [(ngModel)]="email" required email>
+
+        <div *ngIf="exibeErro('email', form)"> E-mail inválido. </div>
     </div>
 
     <div class="p-2">
@@ -14,6 +16,8 @@
         type="password" class="form-control" 
         placeholder="Password" name="password" 
         [(ngModel)]="password" required>
+
+        <div *ngIf="exibeErro('password', form)"> E-mail inválido. </div>
     </div>
 
     <div class="p-2">

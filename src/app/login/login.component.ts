@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+import { LoginService } from './login.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +16,9 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
 
-  constructor() { }
+  constructor(
+    private loginService: LoginService,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -37,8 +41,19 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    console.log('email: ', this.email);
-    console.log('password', this.password);
+    this.login();
+  }
+
+  login() {
+    this.loginService.logar(this.email, this.password)
+      .subscribe(
+        response => {
+          console.log('Sucesso! Logou.');
+        },
+        error => {
+          console.log('Deu ruim! Não logou.');
+        }
+      );
   }
 
   exibeErro(nomeControle: string, form: NgForm){

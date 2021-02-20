@@ -7,8 +7,8 @@ import { ContatosService } from '../contatos.service';
 
 @Component({
   selector: 'app-listar-contatos',
-  templateUrl: './contatos.component.html',
-  styleUrls: ['./contatos.component.scss']
+  templateUrl: './listar-contatos.component.html',
+  styleUrls: ['./listar-contatos.component.scss']
 })
 export class ListarContatosComponent implements OnInit {
 

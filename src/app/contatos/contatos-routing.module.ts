@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DetalhesContatoComponent } from './detalhes-contato/detalhes-contato.component';
+import { DetalharContatoComponent } from './detalhes-contato/detalhar-contato.component';
 import { ListarContatosComponent } from './listar-contatos/listar-contatos.component';
+
 
 const routes: Routes = [{
   path: '', component: ListarContatosComponent,
 }, {
-  path: 'id', component: DetalhesContatoComponent,
+  path: 'id', component: DetalharContatoComponent,
 }];
 
 @NgModule({

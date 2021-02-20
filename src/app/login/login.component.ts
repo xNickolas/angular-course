@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,9 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+  @ViewChild('emailInput') emailInput: ElementRef;
+  @ViewChild('passwordInput') passwordInput: ElementRef;
 
   email: string;
   password: string;
@@ -21,8 +24,16 @@ export class LoginComponent implements OnInit {
       form.controls.email.markAsTouched();
       form.controls.password.markAsTouched();
 
-      console.log(form);
-      console.log('Formulário inválido!');
+      if (form.controls.email.invalid) {
+        this.emailInput.nativeElement.focus();
+        return;
+      }
+
+      if (form.controls.password.invalid) {
+        this.passwordInput.nativeElement.focus();
+        return;
+      }
+
       return;
     }
 

@@ -2,15 +2,15 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: '<router-outlet></router-outlet>',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   // title = 'Seja bem-vindo!';
-  newWord = 'CARRO';
-  newColor = 'black';
+  // newWord = 'CARRO';
+  // newColor = 'black';
 
-  newTitle = 'Aplicação em Angular!';
+  // newTitle = 'Aplicação em Angular!';
 
   // showHeader = true;
 
@@ -26,9 +26,9 @@ export class AppComponent {
   //   }, 3000);
   // }
 
-  eventoRecebido($event) {
-    console.log('AppComponent: evento recebido.', $event);
-  }
+  // eventoRecebido($event) {
+  //   console.log('AppComponent: evento recebido.', $event);
+  // }
 
 
 }

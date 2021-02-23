@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { environment } from './../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { Contato } from './contatos.interfaces';
 
 @Injectable({
@@ -38,6 +38,6 @@ export class ContatosService {
   }
 
   deleteContato(id: string) {
-    return this.http.delete<Contato[]>(this.API_URL + '/contatos/' + id, this.httpOptions);
+    return this.http.delete<Contato>(this.API_URL + '/contatos/' + id, this.httpOptions);
   }
 }
